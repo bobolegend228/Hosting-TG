@@ -7,7 +7,7 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN")
 BOT_TOKEN = 1234567890:...AAF8664380576:AAHr0j1QKuecFw9LFHsKCIQzXtR9IhkwyBY...
 GAME_URL   = https://Bobokvas228.github.io/detective-cards/
 # Ссылка на твою игру на GitHub Pages
-GAME_URL = os.environ.get("GAME_URL", "https://твой_ник.github.io/detective-cards/")
+GAME_URL = os.environ.get("GAME_URL", "https://bobolegend228.github.io/Detective-Cards/")
 
 WELCOME_TEXT = """
 🕵️ *Добро пожаловать в Карточный детектив\!*
