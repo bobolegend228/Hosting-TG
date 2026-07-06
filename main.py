@@ -3,7 +3,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, MenuBut
 from telegram.ext import Application, CommandHandler, ContextTypes
 
 # Токен берётся из переменной окружения (безопасно)
-BOT_TOKEN = os.environ.get("@theDetectBot_bot")
+BOT_TOKEN = os.environ.get("https://t.me/theDetectBot_bot")
 BOT_TOKEN = 1234567890:...AAF8664380576:AAHr0j1QKuecFw9LFHsKCIQzXtR9IhkwyBY...
 GAME_URL   = https://Bobokvas228.github.io/detective-cards/
 # Ссылка на твою игру на GitHub Pages
