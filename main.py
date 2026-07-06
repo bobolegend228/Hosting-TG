@@ -1,12 +1,18 @@
 import os
+import sys
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, MenuButtonWebApp, WebAppInfo
 from telegram.ext import Application, CommandHandler, ContextTypes
 
-# Токен берётся из переменной окружения (безопасно)
-BOT_TOKEN = os.environ.get("https://t.me/theDetectBot_bot")
-BOT_TOKEN = 1234567890:...AAF8664380576:AAHr0j1QKuecFw9LFHsKCIQzXtR9IhkwyBY...
-GAME_URL   = https://Bobokvas228.github.io/detective-cards/
-# Ссылка на твою игру на GitHub Pages
+# Токен берётся из переменной окружения
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
+
+# Если токен не найден, бот вежливо сообщит об этом в консоль (логи) и не упадет с ошибкой
+if not BOT_TOKEN:
+    print("КРИТИЧЕСКАЯ ОШИБКА: Переменная BOT_TOKEN не задана!")
+    print("Пожалуйста, добавьте её в настройки (Variables) на Railway.")
+    sys.exit(1)
+
+# Ссылка на игру на GitHub Pages (берется из настроек или используется значение по умолчанию)
 GAME_URL = os.environ.get("GAME_URL", "https://bobolegend228.github.io/Detective-Cards/")
 
 WELCOME_TEXT = """
@@ -57,7 +63,7 @@ def main():
         .build()
     )
     app.add_handler(CommandHandler("start", start))
-    print("Бот запущен...")
+    print("Бот успешно запущен и слушает команды...")
     app.run_polling(allowed_updates=Update.ALL_TYPES)
 
 if __name__ == "__main__":
